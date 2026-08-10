@@ -1,0 +1,23 @@
+{
+  "name": "chatgpt-3d-mindmap",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive 3D GitHub repository mind map for ChatGPT via MCP Apps.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check src/shared/graph.mjs && node --check src/server/github-client.mjs && node --check src/server/repository-graph.mjs && node --check src/server/tool-handlers.mjs && node --check src/server/widget-resource.mjs && node --check src/server/mcp.mjs && node --check src/server/http.mjs && node --check src/widget/state-core.js && node --check src/widget/app.js",
+    "build": "npm run check",
+    "start": "node src/server/http.mjs",
+    "dev": "node --watch src/server/http.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.5",
+    "@modelcontextprotocol/sdk": "^1.19.9",
+    "cors": "^2.8.5",
+    "zod": "^3.25.76"
+  }
+}
